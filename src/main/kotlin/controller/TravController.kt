@@ -16,34 +16,34 @@ class TravController (
     val messageService: MessageService,
     val infoService: InfoService,
 ) {
-    @PostMapping("/POST")
+    @PostMapping("/users")
     fun createUser(@RequestBody user : User) : UserCreateResponse {
         return userService.add(user)
     }
 
-    @GetMapping("/GET")
+    @GetMapping("/photo")
     fun pictureQuery(@RequestParam("file") photo: MultipartFile) : ResponseEntity<SightInfo> {
         return infoService.find(photo)
     }
 
-    @PostMapping("/POST")
+    @PostMapping("/users")
     fun makeFriens(@RequestParam("tg") tg : String) : ResponseEntity<String> {
         userService.addFriend(tg)
         return ResponseEntity("The list of friends was successfully updated", HttpStatus.OK)
     }
 
-    @PostMapping("/POST")
+    @PostMapping("/users/rate")
     fun rate(@RequestParam("sight") sight : String, @RequestParam("rate") rate : Boolean) : ResponseEntity<String> {
         infoService.updateRating(sight, rate)
         return ResponseEntity("The rating was successfully updated", HttpStatus.OK)
     }
 
-    @GetMapping("/GET")
+    @GetMapping("/rating")
     fun getRating() : ResponseEntity<Rating> {
         return infoService.getRating()
     }
 
-    @PostMapping("/POST")
+    @PostMapping("/users")
     fun share(@RequestParam("tg") user : String, @RequestParam("sight") sight : String) : ResponseEntity<String> {
         messageService.shareWithFriend()
         return ResponseEntity("Message sent successfully", HttpStatus.OK)
