@@ -14,7 +14,7 @@ import java.awt.print.Pageable
 class TravController (
     val userService: UserService,
     val messageService: MessageService,
-    val infoService: PictureService,
+    val infoService: InfoService,
 ) {
     @PostMapping("/POST")
     fun createUser(@RequestBody user : User) : UserCreateResponse {
