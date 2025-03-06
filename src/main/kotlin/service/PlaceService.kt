@@ -1,9 +1,8 @@
-package org.example.service
-
+package demo.application.service
 
 import org.springframework.stereotype.Service
 
 @Service
-class MessageService {
+class PlaceService {
     // TODO()
 }
