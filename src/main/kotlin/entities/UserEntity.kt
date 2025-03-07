@@ -3,7 +3,15 @@ package org.example.entities
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "users")
+//idx_username и idx_email нужны, так как поиск по имени пользователя и email должен быть быстрым.
+//Уникальность важна, чтобы не было дублирования пользователей.
+@Table(
+    name = "users",
+    indexes = [
+        Index(name = "idx_username", columnList = "username", unique = true),
+        Index(name = "idx_email", columnList = "email", unique = true)
+    ]
+)
 data class User(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

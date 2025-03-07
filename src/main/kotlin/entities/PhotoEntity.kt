@@ -3,7 +3,15 @@ package org.example.entities
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "photos")
+//idx_photo_user ускоряет поиск всех фото конкретного пользователя .
+//idx_photo_place ускоряет поиск всех фото конкретного места .
+@Table(
+    name = "photos",
+    indexes = [
+        Index(name = "idx_photo_user", columnList = "user_id"),
+        Index(name = "idx_photo_place", columnList = "place_id")
+    ]
+)
 data class Photo(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -3,7 +3,16 @@ package org.example.entities
 import jakarta.persistence.*
 
 @Entity
-@Table(name = "places")
+//idx_place_name ускоряет поиск по названию .
+//idx_place_location ускоряет географический поиск (например, "найти ближайшие места"),
+// так как часто будем фильтровать по latitude и longitude.
+@Table(
+    name = "places",
+    indexes = [
+        Index(name = "idx_place_name", columnList = "name"),
+        Index(name = "idx_place_location", columnList = "latitude, longitude")
+    ]
+)
 data class Place(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
