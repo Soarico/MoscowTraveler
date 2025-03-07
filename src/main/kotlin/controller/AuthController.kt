@@ -2,6 +2,7 @@ package org.example.controller
 
 import org.example.dto.User
 import org.example.response.UserCreateResponse
+import org.example.service.UserService
 import org.springframework.web.bind.annotation.*
 
 @RestController
