@@ -2,7 +2,6 @@ package org.example.controller
 
 import demo.application.dto.SightInfo
 import demo.application.service.PlaceService
-import org.example.service.InfoService
 import org.example.service.UserService
 import org.springframework.http.HttpStatus
 import org.springframework.http.ResponseEntity

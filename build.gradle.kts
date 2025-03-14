@@ -6,7 +6,7 @@ plugins {
 
 }
 
-group = "DatingApp"
+group = "MoscowTraveler"
 version = "1.0-SNAPSHOT"
 
 repositories {
@@ -23,6 +23,15 @@ dependencies {
     implementation("org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
+
+    implementation("jakarta.enterprise:jakarta.enterprise.cdi-api:2.0.0")
+    implementation("jakarta.persistence:jakarta.persistence-api:3.0.0")
+    implementation("jakarta.transaction:jakarta.transaction-api:2.0.0")
+
+    implementation("org.hibernate.orm:hibernate-core:5.6.10.Final")
+    implementation("com.h2database:h2:1.4.200")
+    implementation("org.jetbrains.kotlin:kotlin-reflect")
 }
 
 kotlin {
