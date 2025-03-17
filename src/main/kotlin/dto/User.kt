@@ -8,5 +8,5 @@ data class User (
     val username : String,
     val email : String,
     val password : String,
-    var places : MutableList<Place>
+    var places : MutableList<Long>
 )
