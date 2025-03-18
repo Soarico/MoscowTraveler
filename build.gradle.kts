@@ -32,6 +32,8 @@ dependencies {
     implementation("org.hibernate.orm:hibernate-core:5.6.10.Final")
     implementation("com.h2database:h2:1.4.200")
     implementation("org.jetbrains.kotlin:kotlin-reflect")
+
+    implementation("org.liquibase:liquibase-core:4.9.1")
 }
 
 kotlin {
