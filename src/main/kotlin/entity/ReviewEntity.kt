@@ -12,6 +12,7 @@ import jakarta.persistence.*
         Index(name = "idx_review_place", columnList = "place_id")
     ]
 )
+
 data class Review(
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
