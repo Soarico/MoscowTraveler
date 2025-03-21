@@ -23,6 +23,6 @@ class InteractionController (
     @PostMapping("/users")
     fun share(@RequestParam("from") from : String, @RequestParam("from") to : String, @RequestParam("sight") sight : String) : ResponseEntity<String> {
         messageService.shareWithFriend(from, to, sight)
-        return ResponseEntity("Message sent successfully", HttpStatus.OK)
+        return ResponseEntity("Message was sent successfully", HttpStatus.OK)
     }
 }
