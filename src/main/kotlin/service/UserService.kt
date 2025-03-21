@@ -5,6 +5,7 @@ import org.apache.coyote.BadRequestException
 import org.example.dto.User
 import org.example.repository.PlaceRepository
 import org.example.repository.UserRepository
+import org.example.response.UserCreateResponse
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -21,7 +22,11 @@ class UserService (
         if (place == null) throw BadRequestException("Такого места не существует")
         user.places.add(place.id)
     }
-    fun add(user : User) {
+    fun add(user : User) : User {
+        //TODO()
+    }
+
+    fun addFriend(tg : String) {
         //TODO()
     }
 }

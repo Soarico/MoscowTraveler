@@ -11,10 +11,11 @@ class AuthController (
 ) {
     @PostMapping("/users")
     fun createUser(@RequestBody user : User) : UserCreateResponse {
-        var userCreateResponse : UserCreateResponse
-        val user = userService.add(user)
-        userCreateResponse.id = user.id
-        userCreateResponse.username = user.username
-        userCreateResponse.token = user.token
+        val newUser = userService.add(user)
+        return UserCreateResponse (
+            id = newUser.id,
+            username = user.username,
+            token = user.token
+        )
     }
 }

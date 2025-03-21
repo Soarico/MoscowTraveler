@@ -5,5 +5,10 @@ import org.springframework.stereotype.Service
 
 @Service
 class InfoService {
-    // TODO()
+    fun getRating() {
+        //TODO()
+    }
+    fun updateRating(sight : String, rate : Boolean) {
+        //TODO()
+    }
 }

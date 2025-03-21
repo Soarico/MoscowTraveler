@@ -20,6 +20,6 @@ class RateController (
 
     @GetMapping("/rating")
     fun getRating() : ResponseEntity<Rating> {
-        return infoService.getRating()
+        infoService.getRating()
     }
 }
