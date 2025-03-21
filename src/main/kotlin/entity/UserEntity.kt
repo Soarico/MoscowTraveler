@@ -30,5 +30,5 @@ data class User(
     val places: List<Long> = mutableListOf(),
 
     @OneToMany(mappedBy = "user")
-    val reviews: List<Review> = mutableListOf()
+    val reviews: List<Long> = mutableListOf()
 )

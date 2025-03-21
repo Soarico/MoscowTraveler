@@ -6,9 +6,9 @@ import org.springframework.stereotype.Service
 @Service
 class InfoService {
     fun getRating() {
-        //TODO()
+        TODO()
     }
     fun updateRating(sight : String, rate : Boolean) {
-        //TODO()
+        TODO()
     }
 }

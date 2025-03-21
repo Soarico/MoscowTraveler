@@ -18,8 +18,8 @@ class RateController (
         return ResponseEntity("The rating was successfully updated", HttpStatus.OK)
     }
 
-    @GetMapping("/rating")
-    fun getRating() : ResponseEntity<Rating> {
-        infoService.getRating()
-    }
+//   @GetMapping("/rating")
+//    fun getRating() : ResponseEntity<Rating> {
+//        infoService.getRating()
+//    }
 }

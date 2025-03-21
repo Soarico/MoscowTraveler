@@ -9,6 +9,6 @@ import sightInfo
 @Service
 class PlaceService {
     fun find(photo: MultipartFile) : sightInfo {
-        //TODO()
+        TODO()
     }
 }

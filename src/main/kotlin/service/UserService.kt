@@ -15,8 +15,8 @@ class UserService (
     private val userRepository: UserRepository
 ) {
     @Transactional
-    fun addToFavorites(id : Long, sightname : String) {
-        val user = userRepository.findById(id)
+    fun addToFavorites(username : String, sightname : String) {
+        val user = userRepository.findByUsername(username)
         if (user == null) throw BadRequestException("Такого пользователя не существует")
         val place = placeRepository.findByName(sightname)
         if (place == null) throw BadRequestException("Такого места не существует")
@@ -24,10 +24,10 @@ class UserService (
     }
 
     fun add(user : User) : User {
-        //TODO()
+        TODO()
     }
 
     fun addFriend(tg : String) {
-        //TODO()
+        TODO()
     }
 }

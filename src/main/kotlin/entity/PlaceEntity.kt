@@ -31,8 +31,8 @@ data class Place(
     val longitude: Double,
 
     @OneToMany(mappedBy = "place")
-    val photos: List<Photo> = mutableListOf(),
+    val photos: List<Long> = mutableListOf(),
 
     @OneToMany(mappedBy = "place")
-    val reviews: List<Review> = mutableListOf()
+    val reviews: List<Long> = mutableListOf()
 )
