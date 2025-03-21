@@ -1,7 +1,5 @@
 package org.example.service
 
-
-import demo.application.dto.SightInfo
 import org.springframework.stereotype.Service
 
 @Service

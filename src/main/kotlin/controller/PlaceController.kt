@@ -18,7 +18,7 @@ class PlaceController (
 ) {
     @GetMapping("/photo")
     fun pictureQuery(@RequestParam("file") photo: MultipartFile) : ResponseEntity<SightInfo> {
-        return placeService.find(photo)
+        placeService.find(photo)
     }
 
     @PostMapping("/place")

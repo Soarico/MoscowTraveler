@@ -22,6 +22,7 @@ class UserService (
         if (place == null) throw BadRequestException("Такого места не существует")
         user.places.add(place.id)
     }
+
     fun add(user : User) : User {
         //TODO()
     }

@@ -27,7 +27,7 @@ data class User(
     val photos: List<Photo> = mutableListOf(),
 
     @OneToMany(mappedBy = "user")
-    val places: List<Place> = mutableListOf(),
+    val places: List<Long> = mutableListOf(),
 
     @OneToMany(mappedBy = "user")
     val reviews: List<Review> = mutableListOf()
