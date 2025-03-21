@@ -15,3 +15,17 @@ CREATE TABLE IF NOT EXISTS places (
     photos JSON,
     reviews JSON
 );
+
+CREATE TABLE IF NOT EXISTS reviews (
+    id SERIAl PRIMARY KEY,
+    user_id SERIAl NOT NULL,
+    place_id SERIAl NOT NULL,
+    rating INT NOT NULL,
+    comment TEXT NOT NULL,
+);
+
+CREATE TABLE IF NOT EXISTS photos (
+    id SERIAl PRIMARY KEY,
+    image_url TEXT NOT NULL,
+    place_id SERIAl NOT NULL,
+);

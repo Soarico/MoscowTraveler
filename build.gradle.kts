@@ -25,7 +25,6 @@ dependencies {
     testImplementation("org.springframework.boot:spring-boot-starter-test")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
 
-    //implementation("jakarta.enterprise:jakarta.enterprise.cdi-api:2.0.0")
     implementation("jakarta.persistence:jakarta.persistence-api:3.0.0")
     implementation("jakarta.transaction:jakarta.transaction-api:2.0.0")
 
