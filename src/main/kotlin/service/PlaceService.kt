@@ -1,14 +1,12 @@
 package demo.application.service
 
-import org.springframework.http.ResponseEntity
+import demo.application.entity.SightInfo
 import org.springframework.stereotype.Service
 import org.springframework.web.multipart.MultipartFile
-import sightInfo
-
 
 @Service
 class PlaceService {
-    fun find(photo: MultipartFile) : sightInfo {
+    fun find(photo: MultipartFile) : SightInfo {
         TODO()
     }
 }

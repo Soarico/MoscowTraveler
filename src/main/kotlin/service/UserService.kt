@@ -1,11 +1,10 @@
 package org.example.service
 
 
-import org.apache.coyote.BadRequestException
-import org.example.dto.User
+import ru.school57.todolist.exception.BadRequestException
 import org.example.repository.PlaceRepository
 import org.example.repository.UserRepository
-import org.example.response.UserCreateResponse
+import org.example.request.UserRegister
 import org.springframework.stereotype.Service
 import org.springframework.transaction.annotation.Transactional
 
@@ -22,9 +21,20 @@ class UserService (
         if (place == null) throw BadRequestException("Такого места не существует")
         user.places.add(place.id)
     }
-    
-    fun add(user : User) : User {
-        TODO()
+
+    @Transactional
+    fun add(request : UserRegister) : String {
+        val user = userRepository.findByEmail(request.email)
+        if (user != null)
+            throw BadRequestException("Пользователь уже зарегистрирован")
+        userRepository.save(
+            org.example.entities.User(
+                email = request.email,
+                password = request.password,
+                username = request.username
+            )
+        )
+        return "Пользователь успешно зарегистрирован"
     }
 
     fun addFriend(tg : String) {

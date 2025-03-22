@@ -23,12 +23,18 @@ data class User(
     @Column(nullable = false)
     val email: String,
 
-    @OneToMany(mappedBy = "user")
-    val photos: List<Photo> = mutableListOf(),
+    @Column(nullable = false)
+    val password: String,
 
-    @OneToMany(mappedBy = "user")
-    val places: List<Long> = mutableListOf(),
+    //@OneToMany(mappedBy = "user")
+    @Column(nullable = false)
+    val photos: MutableList<String> = mutableListOf(),
 
-    @OneToMany(mappedBy = "user")
-    val reviews: List<Long> = mutableListOf()
+    //@OneToMany(mappedBy = "user")
+    @Column(nullable = false)
+    val places: MutableList<Long> = mutableListOf(),
+
+    //@OneToMany(mappedBy = "user")
+    @Column(nullable = false)
+    val reviews: MutableList<Long> = mutableListOf()
 )

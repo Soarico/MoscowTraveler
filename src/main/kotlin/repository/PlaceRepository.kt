@@ -1,6 +1,6 @@
 package org.example.repository
 
-import demo.application.dto.Place
+import org.example.entities.Place
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface PlaceRepository: JpaRepository<Place, Long> {

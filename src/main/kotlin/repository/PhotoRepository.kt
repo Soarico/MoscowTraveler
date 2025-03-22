@@ -1,6 +1,6 @@
 package org.example.repository
 
-import demo.application.dto.Photo
+import org.example.entities.Photo
 import org.springframework.data.jpa.repository.JpaRepository
 
 interface PhotoRepository: JpaRepository<Photo, Long> {

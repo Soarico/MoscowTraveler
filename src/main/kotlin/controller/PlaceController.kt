@@ -1,5 +1,6 @@
 package org.example.controller
 
+import demo.application.entity.SightInfo
 import demo.application.service.PlaceService
 import org.example.service.UserService
 import org.springframework.http.HttpStatus
@@ -9,7 +10,6 @@ import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestParam
 import org.springframework.web.bind.annotation.RestController
 import org.springframework.web.multipart.MultipartFile
-import sightInfo
 
 @RestController
 class PlaceController (
@@ -17,7 +17,7 @@ class PlaceController (
     val userService: UserService
 ) {
     @GetMapping("/photo")
-    fun pictureQuery(@RequestParam("file") photo: MultipartFile) : ResponseEntity<sightInfo> {
+    fun pictureQuery(@RequestParam("file") photo: MultipartFile) : ResponseEntity<SightInfo> {
         placeService.find(photo)
         TODO()
     }
