@@ -3,6 +3,7 @@ package ru.example.demo.service
 import ru.example.demo.DemoApplication
 import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.matchers.shouldNotBe
+import org.junit.jupiter.api.AfterEach
 import ru.example.demo.repository.UserRepository
 import ru.example.demo.request.UserRegister
 import org.junit.jupiter.api.Test
@@ -25,6 +26,10 @@ class ServiceTest {
     @Autowired
     lateinit var userService: UserService
 
+    @AfterEach
+    fun cleanup() {
+        userRepository.deleteAll()
+    }
 
     @Test
     fun `когда пытается зарегистирироваться пользователь, которого нет в базе`() {
