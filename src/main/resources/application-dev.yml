@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: MoscowTravelerDev
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://db:5432/api_database
+    username: admin
+    password: admin
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  liquibase:
+    change-log: classpath:/db/changelog/db.changelog-master.yaml
+config:
+    timeout: 5
+    url: jdbc:postgresql://db:5432/api_database
