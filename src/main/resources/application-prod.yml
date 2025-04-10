@@ -10,8 +10,9 @@ spring:
     show-sql: true
     hibernate:
       ddl-auto: none
+
   liquibase:
-    change-log: classpath:/db/changelog/db.changelog-master.yaml
+    change-log: classpath:/db/db.changelog-master.xml/db.db.changelog-master.xml-master.yaml
 config:
   timeout: 5
   url: jdbc:postgresql://db:5432/api_database
