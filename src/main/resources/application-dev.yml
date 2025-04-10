@@ -3,7 +3,7 @@ spring:
     name: MoscowTravelerDev
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://db:5432/api_database
+    url: jdbc:postgresql://db:5432/my_db
     username: user
     password: EelXD5e8
   jpa:
