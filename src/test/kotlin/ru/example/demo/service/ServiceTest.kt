@@ -53,11 +53,13 @@ class ServiceTest {
             email = "petya@yandex.com",
             password = "12345"
         )
-        userRepository.save(User(
-            email = newUser.email,
-            password = newUser.password,
-            username = newUser.username
-        ))
+        userRepository.save(
+            User(
+                email = newUser.email,
+                password = newUser.password,
+                username = newUser.username
+            )
+        )
         shouldThrow<BadRequestException> {
             userService.add(newUser)
         }

@@ -28,22 +28,26 @@ class UserServiceTest {
             password = "12345"
         )
 
-        every { userRepository.findByEmail(newUser.email)} answers { null }
-        every { userRepository.save(
+        every { userRepository.findByEmail(newUser.email) } answers { null }
+        every {
+            userRepository.save(
+                User(
+                    email = newUser.email,
+                    password = newUser.password,
+                    username = newUser.username
+                )
+            )
+        } answers {
             User(
                 email = newUser.email,
                 password = newUser.password,
                 username = newUser.username
             )
-        )} answers { User(
-            email = newUser.email,
-            password = newUser.password,
-            username = newUser.username
-        ) }
+        }
 
         userService.add(newUser)
 
-        verify(exactly = 1){ userRepository.save(newUser.toEntity()) }
+        verify(exactly = 1) { userRepository.save(newUser.toEntity()) }
     }
 
     @Test
@@ -54,22 +58,28 @@ class UserServiceTest {
             password = "12345"
         )
 
-        every { userRepository.findByEmail(newUser.email)} answers { User(
-            email = newUser.email,
-            password = newUser.password,
-            username = newUser.username
-        ) }
-        every { userRepository.save(
+        every { userRepository.findByEmail(newUser.email) } answers {
             User(
                 email = newUser.email,
                 password = newUser.password,
                 username = newUser.username
             )
-        )} answers { User(
-            email = newUser.email,
-            password = newUser.password,
-            username = newUser.username
-        ) }
+        }
+        every {
+            userRepository.save(
+                User(
+                    email = newUser.email,
+                    password = newUser.password,
+                    username = newUser.username
+                )
+            )
+        } answers {
+            User(
+                email = newUser.email,
+                password = newUser.password,
+                username = newUser.username
+            )
+        }
 
         val exception = assertThrows(BadRequestException::class.java) {
             userService.add(newUser)
@@ -82,7 +92,7 @@ class UserServiceTest {
     fun `когда приходит запрос на добавление места в избранные от пользователя, которого не существует`() {
         val username = "Петя"
         val sightname = "Красная площадь"
-        every { userRepository.findByUsername(username)} answers { null }
+        every { userRepository.findByUsername(username) } answers { null }
 
         val exception = assertThrows(BadRequestException::class.java) {
             userService.addToFavorites(username, sightname)
@@ -95,13 +105,15 @@ class UserServiceTest {
     fun `когда приходит запрос на добавление места, котрое не существует, в избранные`() {
         val username = "Петя"
         val sightname = "Красная площадь"
-        every { userRepository.findByUsername(username)} answers { User(
-            email = "petya@yandex.com",
-            password = "12345",
-            username = username
-        ) }
+        every { userRepository.findByUsername(username) } answers {
+            User(
+                email = "petya@yandex.com",
+                password = "12345",
+                username = username
+            )
+        }
 
-        every { placeRepository.findByName(sightname)} answers { null }
+        every { placeRepository.findByName(sightname) } answers { null }
         val exception = assertThrows(BadRequestException::class.java) {
             userService.addToFavorites(username, sightname)
         }
