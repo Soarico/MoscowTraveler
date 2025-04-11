@@ -18,7 +18,7 @@ dependencies {
     implementation(platform("org.springframework.boot:spring-boot-dependencies:3.3.6"))
     implementation(platform("org.springframework.cloud:spring-cloud-dependencies:2023.0.4"))
 
-    implementation ("org.postgresql:postgresql")
+    implementation ("org.postgresql:postgresql:42.6.0")
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("org.springframework.cloud:spring-cloud-starter-openfeign")
     implementation("com.fasterxml.jackson.module:jackson-module-kotlin")

@@ -3,17 +3,18 @@ spring:
     name: MoscowTravelerDev
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://db:5432/my_db
+    url: jdbc:postgresql://172.17.0.2:5432/postgres
     username: user
     password: EelXD5e8
   jpa:
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
 
 #  liquibase:
 #    change-log: classpath:/db/db.changelog-master.xml/db.db.changelog-master.xml-master.yaml
 
 config:
     timeout: 5
-    url: jdbc:postgresql://db:5432/my_db
+    url: jdbc:postgresql://0.0.0.0:5432/my_db
+
