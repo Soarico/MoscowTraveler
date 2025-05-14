@@ -1,9 +1,10 @@
 package ru.example.demo.entity
 
 import jakarta.persistence.*
+import jakarta.validation.constraints.Size
 
 @Entity
-//idx_place_name ускоряет поиск по названию .
+//idx_place_name ускоряет поиск по названию.
 //idx_place_location ускоряет географический поиск (например, "найти ближайшие места"),
 // так как часто будем фильтровать по latitude и longitude.
 @Table(
@@ -21,7 +22,8 @@ data class Place(
     @Column(nullable = false)
     val name: String,
 
-    @Column(nullable = false)
+    @field:Size(max = 1000)
+    @Column(nullable = false, length = 1000)
     val description: String,
 
     @Column(nullable = false)

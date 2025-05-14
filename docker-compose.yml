@@ -1,0 +1,14 @@
+services:
+  postgres_db:
+    image: postgres:alpine
+    restart: on-failure
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: my_db
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: EelXD5e8
+    ports:
+      - 5432:5432
+volumes:
+  db-data:

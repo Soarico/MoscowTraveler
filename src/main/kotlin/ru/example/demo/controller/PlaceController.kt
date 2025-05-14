@@ -17,9 +17,15 @@ class PlaceController (
     val placeService: PlaceService,
     val userService: UserService
 ) {
+    @GetMapping("/name")
+    fun nameQuery(@RequestParam("sightname") sightname : String) : ResponseEntity<SightInfo> {
+        val sightInfo = placeService.findByName(sightname)
+        return ResponseEntity(sightInfo, HttpStatus.OK)
+    }
+
     @GetMapping("/photo")
     fun pictureQuery(@RequestParam("file") photo: MultipartFile) : ResponseEntity<SightInfo> {
-        placeService.find(photo)
+        placeService.findByPicture(photo)
         TODO()
     }
 

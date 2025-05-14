@@ -9,7 +9,7 @@ CREATE TABLE IF NOT EXISTS users (
 CREATE TABLE IF NOT EXISTS places (
     id SERIAl PRIMARY KEY,
     name TEXT NOT NULL,
-    description TEXT NOT NULL,
+    description VARCHAR(MAX) NOT NULL,
     latitude DOUBLE NOT NULL,
     longitude DOUBLE NOT NULL,
     photos JSON,

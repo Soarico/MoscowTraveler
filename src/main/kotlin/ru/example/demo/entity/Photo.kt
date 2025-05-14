@@ -21,7 +21,7 @@ data class Photo(
     val imageUrl: String,
 
     @ManyToOne
-    @JoinColumn(name = "user_id", nullable = false)
+    @JoinColumn(name = "user_id", nullable = true)
     val user: User,
 
     @ManyToOne

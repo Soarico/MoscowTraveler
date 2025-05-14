@@ -2,9 +2,10 @@ spring:
   application:
     name: MoscowTravelerDev
   datasource:
+#    docker run --name postgres_db -p 5433:5432 -e POSTGRES_USER=admin -e POSTGRES_PASSWORD=EelXD5e8 -e POSTGRES_DB=my_db postgres:17
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://172.17.0.2:5432/postgres
-    username: user
+    url: jdbc:postgresql://localhost:5433/my_db
+    username: admin
     password: EelXD5e8
   jpa:
     show-sql: true
@@ -13,8 +14,4 @@ spring:
 
 #  liquibase:
 #    change-log: classpath:/db/db.changelog-master.xml/db.db.changelog-master.xml-master.yaml
-
-config:
-    timeout: 5
-    url: jdbc:postgresql://0.0.0.0:5432/my_db
 
